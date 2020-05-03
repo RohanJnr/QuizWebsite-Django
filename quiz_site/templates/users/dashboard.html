@@ -1,0 +1,12 @@
+{% extends 'home/base.html' %}
+
+{% block body %}
+
+<h2>You are logged in as {{ request.user }}</h2>
+
+<h4>Quizes</h4>
+{% for quiz in quizes %}
+	<p>{{ quiz.title }}</p>
+{% endfor %}
+
+{% endblock %}

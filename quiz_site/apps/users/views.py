@@ -1,11 +1,12 @@
 from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.http import Http404
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect,get_list_or_404
 from django.views import View
 
 from .forms import UserCreationForm, UserLoginForm
 from .mixins import RestrictPagesIfLoggedMixin
+from quiz_site.apps.quiz.models import Quiz
 
 
 class RegisterView(RestrictPagesIfLoggedMixin, View):
@@ -46,7 +47,7 @@ class LoginView(RestrictPagesIfLoggedMixin, View):
 		user = authenticate(request, email=email, password=password)
 		# validation is done in forms.py
 		login(request, user)
-		return redirect("home")
+		return redirect("dashboard")
 
 
 class LogoutView(LoginRequiredMixin, View):
@@ -56,3 +57,15 @@ class LogoutView(LoginRequiredMixin, View):
 		logout(request)
 		return redirect("home")
 
+
+class DashboardView(LoginRequiredMixin, View):
+	"""A user dashboard."""
+
+	def get(self, request):
+		user = request.user
+		quizes = get_list_or_404(Quiz, author=user)
+		template_name = "users/dashboard.html"
+		context = {
+			"quizes": quizes
+		}
+		return render(request, template_name, context)
