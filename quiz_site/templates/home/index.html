@@ -1,0 +1,8 @@
+{% extends 'home/base.html' %}
+
+{% block body %}
+<h1>Home page</h1>
+{{ request.user }}
+<br>
+{{ request.user.is_authenticated }}
+{% endblock %}
