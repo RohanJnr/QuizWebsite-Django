@@ -1,0 +1,23 @@
+{% extends "home/base.html" %}
+
+{% block body %}
+
+
+<h3>Quiz has come to an end.</h3>
+
+<p>Your score is {{ score }}.</p>
+<hr>
+{% if incorrectly_answered %}
+	<h2>Incorrectly answered:</h2>
+
+	{% for question, choices in incorrectly_answered.items %}
+		
+		<b>{{ question }}</b>
+		<p>Your answer: {{ choices.user_choice }}</p>
+		<p>Correct answer: {{ choices.correct_choice }}</p>
+
+	{% endfor %}
+{% endif %}
+
+
+{% endblock %}

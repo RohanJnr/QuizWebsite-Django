@@ -1,0 +1,15 @@
+{% extends "home/base.html" %}
+
+{% block body %}
+
+
+{% for quiz in object_list %}
+
+	<h4>{{ quiz.title }}</h4>
+	<small>{{ quiz.author.username }}</small>
+	<p>{{ quiz.description }}</p>
+	<hr>
+{% endfor %}
+
+
+{% endblock %}

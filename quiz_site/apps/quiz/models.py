@@ -21,7 +21,7 @@ class MultipleChoiceQuestion(models.Model):
 	question = models.TextField()
 
 	def __str__(self):
-		return f"{self.quiz} - {self.question}"
+		return f"{self.question}"
 
 	class Meta:
 		verbose_name = ("MCQ")
@@ -30,9 +30,10 @@ class MultipleChoiceQuestion(models.Model):
 class Choice(models.Model):
 	question = models.ForeignKey(MultipleChoiceQuestion, on_delete=models.CASCADE)
 	choice_name = models.CharField(max_length=200)
+	is_answer = models.BooleanField(default=False)
 
 	def __str__(self):
-		return f"{self.question} - {self.choice}" 
+		return f"{self.choice_name}" 
 
 	class Meta:
 		verbose_name = ("Choice")
