@@ -118,3 +118,18 @@ class EndQuiz(View):
 		}
 		return render(request, template_name, context)
 
+
+class CreateQuiz(LoginRequiredMixin, View):
+	"""Create a quiz."""
+
+	def get(self, request):
+		"""Handle get request."""
+		create_quiz_form = CreateQuizForm()
+
+		template_name = "quiz/createquiz.html"
+		context = {
+			"create_quiz_form": create_quiz_form,
+		}
+
+		return render(request, template_name, context)
+

@@ -1,0 +1,105 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Shadows+Into+Light&display=swap');
+
+*{
+    padding: 0;
+    margin: 0;
+}
+
+body{
+    font-family: 'Roboto', sans-serif;
+}
+
+main {
+    padding-left: 8%;
+    padding-right: 8%;
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    color: silver;
+    font-weight: 500;
+    background: #434343;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #434343, #000000);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #434343, #000000); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+    height: 500px;
+}
+main h1{
+    font-family: 'Shadows Into Light', cursive;
+    font-size: 90px;
+}
+main hr{
+    background: gray;
+}
+main .container{
+    padding-top: 100px;
+}
+
+main hr, main p{
+    width: 90%;
+}
+
+main p{
+    font-size: 20px;
+}
+.site-footer
+{
+  background-color:#26272b;
+  padding:25px 25%;
+  font-size:15px;
+  line-height:24px;
+  color:#737373;
+  text-align: center;
+  height: 100%;
+}
+
+.play-btn{
+    font-size: 20px;
+    color:#737373;
+    background-color: rgb(51, 53, 54);
+    border-color: black;
+    color: silver;
+    transition-duration: 1s;
+}
+
+.play-btn:hover{
+    background-color: silver;
+}
+
+footer .links{
+    font-size: 30px;
+}
+
+footer .links i{
+    color: lightblue;
+    margin: 10px;
+    transition-duration: 1s;
+}
+
+footer .links i:hover{
+    transform: scale(1.5);
+}
+
+footer hr{
+    background-color: rgb(51, 51, 51);
+}
+
+a{
+    text-decoration: none;
+}
+
+main .bulb-img img{
+    height: 400px;
+    width: auto;
+}
+
+nav{
+    font-weight: bold;
+}
+
+.nav-link{
+    font-size: 18px;
+}
+.navbar-brand{
+    font-family: 'Shadows Into Light', cursive;
+    font-size: 30px;
+}

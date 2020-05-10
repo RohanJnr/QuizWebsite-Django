@@ -1,8 +1,20 @@
 {% extends 'home/base.html' %}
-
+{% load static %}
 {% block body %}
-<h1>Home page</h1>
-{{ request.user }}
-<br>
-{{ request.user.is_authenticated }}
+<main>
+    <div class="container">
+        <h1>Quizista</h1>
+        <hr>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ab ullam odit itaque repudiandae nobis quaerat dolores maxime iste tempora minus beatae necessitatibus illo, veritatis omnis temporibus blanditiis aliquid ratione excepturi!</p>
+
+        <a href="#">
+            <button class="btn play-btn">
+                Search quizes
+              </button>
+        </a>
+    </div>
+    <div class="bulb-img">
+        <img src="{% static 'images/bulb.png' %}" alt="">
+    </div>
+</main>
 {% endblock %}
